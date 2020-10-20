@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+    <h1>Цитаты</h1>
+    <div class="container">
+        <div class="row">
+            {% for article in articles %}
+                <div class="blog-card col-lg-3">
+                    <h4><a href="{% url 'article' article.id %} ">{{ article.title }}</a></h4>
+                    <p>{{ article.text }}</p>
+                </div>
+             {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
